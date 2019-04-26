@@ -11,9 +11,6 @@ module Psych
     class Node
       include Enumerable
 
-      # The children of this node
-      attr_reader :children
-
       # An associated tag
       attr_reader :tag
 
@@ -29,9 +26,9 @@ module Psych
       # The column number where this node ends
       attr_accessor :end_column
 
-      # Create a new Psych::Nodes::Node
-      def initialize
-        @children = []
+      # The children of this node
+      def children
+        @children ||= []
       end
 
       ###
